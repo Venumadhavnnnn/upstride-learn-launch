@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,6 +8,7 @@ import { toast } from "@/hooks/use-toast";
 import { GraduationCap, Users, Award, TrendingUp, Heart, Clock } from "lucide-react";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,8 +60,8 @@ const Index = () => {
             <Button variant="ghost" onClick={() => scrollToSection("about")}>
               About Us
             </Button>
-            <Button variant="ghost" onClick={() => scrollToSection("courses")}>
-              Courses
+            <Button variant="ghost" onClick={() => navigate("/programs")}>
+              Programs
             </Button>
           </div>
         </nav>
@@ -78,9 +80,9 @@ const Index = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => scrollToSection("courses")}
+              onClick={() => navigate("/programs")}
             >
-              Explore Courses
+              Explore Programs
             </Button>
           </div>
         </div>

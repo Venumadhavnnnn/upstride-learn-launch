@@ -20,10 +20,8 @@ const LearningPortal = () => {
   };
 
   const modules = [
-    { id: 1, title: "Introduction to Programming", description: "Learn the basics of programming", lessons: 12 },
-    { id: 2, title: "Data Structures", description: "Master fundamental data structures", lessons: 15 },
-    { id: 3, title: "Web Development", description: "Build modern web applications", lessons: 20 },
-    { id: 4, title: "Machine Learning Basics", description: "Introduction to ML concepts", lessons: 18 },
+    { id: "fundamentals-of-ai", title: "Fundamentals of AI", description: "Master the core concepts of Artificial Intelligence", lessons: 15 },
+    { id: "placement", title: "Placement", description: "Prepare for placements with interview prep and career guidance", lessons: 20 },
   ];
 
   const ebooks = [
@@ -68,7 +66,9 @@ const LearningPortal = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">{module.lessons} lessons</p>
-                  <Button className="w-full">Start Learning</Button>
+                  <Button className="w-full" onClick={() => navigate(`/module/${module.id}`)}>
+                    Access Files
+                  </Button>
                 </CardContent>
               </Card>
             ))}
